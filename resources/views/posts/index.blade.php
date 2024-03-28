@@ -1,17 +1,6 @@
 @extends('layouts.app_original')
 @section('content')  
 
-<body>
-  <header>
-    <div class="header-left">
-            <img class="logo" src="./logo.png" alt="">
-        </div>
-        <div class="header-right">
-            <ul class="nav">
-                <li><a href="#">ユーザA</a></li>
-            </ul>
-        </div>
-  </header>
   <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -36,7 +25,7 @@
         </div>
         </div>
         <div class="col-md-2">
-          <a href="#" class="btn btn-primary">
+          <a href="{{ route('posts.create') }}" class="btn btn-primary">
             新規投稿
           </a>
         </div>
