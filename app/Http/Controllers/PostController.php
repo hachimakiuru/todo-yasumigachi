@@ -33,7 +33,37 @@ class PostController extends Controller
             $post -> save();
 
             return redirect()->route('posts.index');
+        }
 
+        function show($id)
+        {
+            $post = Post::find($id);
+            return view('posts.show' ,['post'=>$post]);
+        }
 
+        function edit($id)
+        {
+            $post = Post::find($id);
+            return view('posts.edit', ['post'=>$post]);
+        }
+
+        function update(Request $request, $id)
+        {
+            $post = Post::find($id);
+
+            $post -> title = $request -> title;
+            $post -> body = $request -> body;
+            $post -> save();
+
+            return view('posts.show' , ['post' => $post]);
+        }
+
+        function destroy($id)
+        {
+            $post = Post::find($id);
+
+            $post -> delete();
+
+            return redirect()->route('posts.index');
         }
 }
