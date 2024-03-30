@@ -11,6 +11,13 @@
             @foreach ($posts as $post)
           
             <div class="card-body">
+                <td>
+                @if($post->img_at)
+                    <img src="{{ asset('uploads/' . $post->img_at) }}" alt="Post Image" style="max-width: 100px;">
+                @else
+                    No Image
+                @endif
+                </td>
                 <h5 class="card-title">タイトル : {{ $post->title }}</h5>
                 <p class="card-text">
                   内容 : {{ $post->body }}

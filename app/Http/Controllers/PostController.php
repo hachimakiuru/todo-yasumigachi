@@ -24,13 +24,26 @@ class PostController extends Controller
 
         function store(Request $request)
         {
+
+            // $request->validate([
+            //     'title' => 'required|string|max:255',
+            //     'body' => 'required|string',
+            //     'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            // ]);
+            //->validate function might the reason of can't save posts-> skip this part = low priority
+            
             $post = new Post;
 
             $post -> title = $request ->title;
             $post -> body = $request ->body;
             $post -> user_id = Auth::id();
-
             $post -> save();
+
+            if ($request->hasFile('image')){
+                $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+                $request->file('image')->storeAs('images', $filename);
+                $post->image = $filename;
+            }
 
             return redirect()->route('posts.index');
         }

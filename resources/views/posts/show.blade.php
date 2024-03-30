@@ -5,6 +5,13 @@
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card mt-3">
+                <td>
+                  @if($post->img_at)
+                      <img src="{{ asset('uploads/' . $post->img_at) }}" alt="Post Image" style="max-width: 100px;">
+                  @else
+                      No Image
+                  @endif
+                  </td>
                   <div class="card-header">
                       <h5>タイトル：{{ $post->title }}</h5>
                   </div>
