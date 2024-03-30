@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,7 @@ Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.de
 Route::get('/comments/create/{post_id}',[CommentController::class, 'create'])->name('comments.create');
 
 Route::post('/comments',[CommentController::class, 'store'])->name('comments.store');
+
+
+//Products
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
