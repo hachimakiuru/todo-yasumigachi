@@ -17,11 +17,15 @@
         
     </head>
     <body>
-
     <div class="antialiased">
         
         <div class="main-box">
-            <h1>Home</h1>
+            <h1>welcome</h1>
+
+             <div class="btn-box-aa">         
+                <a href="{{ route('login') }}" class="btn">Log in</a>
+                <a href="{{ route('register') }}" class="btn">Register</a>  
+            </div>
             <form action="">
 
                {{-- <div class="input-box">
@@ -46,16 +50,16 @@
                 <a href="{{ route('login') }}" class="btn">Log in</a>
 
             </button> --}}
-            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                {{-- @auth --}}
-                    {{-- <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a> --}}
-                {{-- @else --}}
+            {{-- <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                @auth 
+                     <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a> 
+                @else 
                     <a href="{{ route('login') }}" class="btn">Log in</a>
 
-                    {{-- @if (Route::has('register'))
+                     @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="register-link">Register</a>
                     @endif
-                @endauth --}}
+                @endauth 
             </div>
 
             <div class="register">
@@ -63,8 +67,13 @@
                     @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="register-link">Register</a>
                         @endif
-                </p>
+                </p> --}}
             </div>
+
+            {{-- <div class="btn-box">         
+                <a href="{{ route('login') }}" class="btn">Log in</a>
+                <a href="{{ route('register') }}" class="btn">Register</a>  
+            </div> --}}
         </form>    
         </div>
 
