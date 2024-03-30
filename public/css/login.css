@@ -21,14 +21,73 @@ body{
 .container{
     position: relative;
     width: 100%;
-    max-width: 450px;
+    max-width: 700px;
     height: 530px;
     background: transparent;
     border-radius: 20px;
     border: 2px solid rgba(257, 257, 257, .7);
     backdrop-filter: blur(15px);
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     overflow: hidden;
+}
+
+.py-4{
+    width: 390px;
+}
+
+.login-box{
+    width: 100%;
+}
+
+.card{
+    margin-top: 70px;
+}
+
+.card-body{
+
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.email2{
+    display: flex;
+    justify-content: center;
+}
+
+.email3{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.password1{
+    display: flex;
+    justify-content: center;
+}
+
+.password2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.form1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.col-md-8{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
