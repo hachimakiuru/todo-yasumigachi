@@ -15,6 +15,10 @@
                     <textarea class="form-control" placeholder="内容" rows="5" name="body">
                     </textarea>
                 </div>
+                <div>
+                    <label for="image" accept="image/png,image/jpeg,image/jpg">ファイルを選択</label>
+                    <input type="file" name="image" value="{{ old("image") }}">
+                </div>
                 <button type="submit" class="btn btn-primary">作成</button>
             </form>
         </div>

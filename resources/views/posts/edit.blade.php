@@ -16,6 +16,10 @@
                     <label>内容</label>
                     <textarea class="form-control" rows="5" name="body">{{ $post->body }}</textarea>
                 </div>
+                <div>
+                    <label for="image" accept="image/png,image/jpeg,image/jpg">ファイルを選択</label>
+                    <input type="file" name="image" value="{{ old("image") }}">
+                </div>
                 <button type="submit" class="btn btn-primary">更新する</button>
             </form>
         </div>
