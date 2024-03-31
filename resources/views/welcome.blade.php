@@ -22,6 +22,10 @@
         <div class="main-box">
             <h1>welcome</h1>
 
+            {{ date('Y年m月d日') }}
+            {{ now()->format('Y年m月d日') }}
+
+
              <div class="btn-box-aa">         
                 <a href="{{ route('login') }}" class="btn">Log in</a>
                 <a href="{{ route('register') }}" class="btn">Register</a>  

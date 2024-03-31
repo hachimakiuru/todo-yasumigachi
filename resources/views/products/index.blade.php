@@ -6,14 +6,15 @@
 
      <div class="training">
         <h1>トレーニング日</h1>
-        @foreach ($products as $product)
-        <h1>{{ date('Y-m-d',strtotime($product->created_at)) }}</h1>
-        <input type="date">
+
+         {{-- {{ date('Y年m月d日') }}
+         {{ now()->format('Y年m月d日') }} --}}
+
         {{-- <h1>{{ str_replace( 10, '', $product->created_at) }}</h1> --}}
 
             
         {{-- <h1>{{ $product->created_at}}</h1> --}}
-        @endforeach
+        {{-- @endforeach --}}
 
      </div>
 
