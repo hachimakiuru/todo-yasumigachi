@@ -32,8 +32,3 @@
 
 
 @endsection
-
-</main>
-</div>
-</body>
-</html>
