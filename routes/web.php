@@ -31,7 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::resource('posts',PostController::class);
 
-// 
+// Post Page
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
@@ -47,6 +47,9 @@ Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update
 
 Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
+
+
+//commenting
 Route::get('/comments/create/{post_id}',[CommentController::class, 'create'])->name('comments.create');
 
 Route::post('/comments',[CommentController::class, 'store'])->name('comments.store');

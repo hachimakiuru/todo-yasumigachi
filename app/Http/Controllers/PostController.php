@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 
 
@@ -25,25 +26,27 @@ class PostController extends Controller
         function store(Request $request)
         {
 
-            // $request->validate([
-            //     'title' => 'required|string|max:255',
-            //     'body' => 'required|string',
-            //     'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            // ]);
+            $request->validate([
+                'title' => 'required|string|max:255',
+                'body' => 'required|string',
+                'image' => 'required|image',
+            ]);
             //->validate function might the reason of can't save posts-> skip this part = low priority
             
             $post = new Post;
 
             $post -> title = $request ->title;
             $post -> body = $request ->body;
-            $post -> user_id = Auth::id();
-            $post -> save();
 
             if ($request->hasFile('image')){
-                $filename = time() . '_' . $request->file('image')->getClientOriginalName();
-                $request->file('image')->storeAs('images', $filename);
-                $post->image = $filename;
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('storage/images'), $imageName);
+                $post->image = $imageName;
             }
+            $post -> user_id = Auth::id();
+
+            $post -> save();
 
             return redirect()->route('posts.index');
         }
@@ -62,13 +65,32 @@ class PostController extends Controller
 
         function update(Request $request, $id)
         {
-            $post = Post::find($id);
 
-            $post -> title = $request -> title;
-            $post -> body = $request -> body;
+            $post = Post::findOrFail($id);
+
+            // same validation as store
+            $validateData = $request->validate([
+                'title' => 'required|string|max:255',
+                'body' => 'required|string',
+                'image' => 'required|image',
+            ]);
+    
+
+            $post -> title = $validateData['title'];
+            $post -> body = $validateData['body']; 
+
+            
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('storage/images'), $imageName);
+                $post->image = $imageName;
+            
+            
+            $post -> user_id = Auth::id();
+
             $post -> save();
 
-            return view('posts.show' , ['post' => $post]);
+            return redirect()->route('posts.index');
         }
 
         function destroy($id)

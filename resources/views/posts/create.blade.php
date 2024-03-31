@@ -4,7 +4,7 @@
   <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="{{ route('posts.store') }}" method="POST">
+            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>タイトル</label>
@@ -16,8 +16,8 @@
                     </textarea>
                 </div>
                 <div>
-                    <label for="image" accept="image/png,image/jpeg,image/jpg">ファイルを選択</label>
-                    <input type="file" name="image" value="{{ old("image") }}">
+                    <label for="image">Image:</label><br>
+                    <input type="file" id="image" name="image" >
                 </div>
                 <button type="submit" class="btn btn-primary">作成</button>
             </form>

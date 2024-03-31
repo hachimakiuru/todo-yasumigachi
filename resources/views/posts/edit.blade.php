@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="{{ route('posts.update',$post->id) }}" method="POST">
+            <form action="{{ route('posts.update',$post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="form-group">
@@ -17,8 +17,8 @@
                     <textarea class="form-control" rows="5" name="body">{{ $post->body }}</textarea>
                 </div>
                 <div>
-                    <label for="image" accept="image/png,image/jpeg,image/jpg">ファイルを選択</label>
-                    <input type="file" name="image" value="{{ old("image") }}">
+                    <label for="image">Image:</label><br>
+                    <input type="file" id="image" name="image"  value="{{ $post->image }}">
                 </div>
                 <button type="submit" class="btn btn-primary">更新する</button>
             </form>
