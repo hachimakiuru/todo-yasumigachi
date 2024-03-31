@@ -4,20 +4,20 @@
   <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-             <div class="card text-center">
+           <div class="card text-center">
             <div class="card-header">
-                投稿一覧
+                みんなの投稿
+                <a href="{{ route('posts.create') }}"><i class='bx bx-plus'></i></i></a>
             </div>
             @foreach ($posts as $post)
-          
             <div class="card-body">
-                <td>
-                @if($post->img_at)
-                    <img src="{{ asset('uploads/' . $post->img_at) }}" alt="Post Image" style="max-width: 100px;">
-                @else
-                    No Image
-                @endif
-                </td>
+              @if($post->image)
+
+                  <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image">
+                     @else
+                         <p>No image available</p>
+                     @endif
+
                 <h5 class="card-title">タイトル : {{ $post->title }}</h5>
                 <p class="card-text">
                   内容 : {{ $post->body }}
@@ -31,12 +31,12 @@
             @endforeach
         </div>
         </div>
-        <div class="col-md-2">
+        {{-- <div class="col-md-2">
           <a href="{{ route('posts.create') }}" class="btn btn-primary">
             新規投稿
           </a>
         </div>
-        
+         --}}
     </div>
   </div>
 
