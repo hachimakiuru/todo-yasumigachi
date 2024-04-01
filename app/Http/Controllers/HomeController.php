@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Records;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $records = Records::all();
+        return view('home', compact('records'));
+    }
+    
+    public function store(Request $request)
+    {
+        $record = new Records;
+        $record->title = $request->title;
+        $record->kg = $request->kg;
+        $record->reps = $request->reps;
+        $record->set = $request->set;
+
+        $record->save();
+        return redirect()->route('home');
+
     }
 }
+
+
