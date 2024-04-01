@@ -25,7 +25,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/home', [App\Http\Controllers\HomeController::class, 'store'])->name('home.store');
+Route::put('/home/store', [App\Http\Controllers\HomeController::class, 'store'])->name('home.store');
+
+Route::put('/home/{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('home.edit');
 
 // Route::get('/create', function () {
 //     return view('posts.create');

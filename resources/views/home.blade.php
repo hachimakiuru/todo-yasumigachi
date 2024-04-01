@@ -33,16 +33,93 @@
               <li>kg: {{ $record->kg }}</li>
               <li>reps: {{ $record->reps }}</li>
           </ul>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $record->id }}">
+            edit
+          </button>
+
+          <!-- Modal -->
+      <div class="modal fade" id="exampleModal{{ $record->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">種目edit</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            {{-- 入力画面 --}}
+            <form action="{{ route('home.edit', $record->id) }}" method="POST">
+                @csrf
+                @method('put')
+                
+                {{-- <input type="text" name="title" value="{{ $record->title }}">
+                <input type="number" name="set" value="{{ $record->set }}">
+                <input type="number" name="kg" value="{{ $record->kg }}">
+                <select name="reps"> --}}
+                    <!-- オプションの設定と選択 -->
+                {{-- </select> --}}
+
+              <div>
+                <input type="text" name="title" value="{{ $record->title }}">
+              </div>
+              <h4>set</h4>
+              <select class="" aria-label="" name="set">
+                <option selected value="{{ $record->set }}">{{ $record->set }}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">kg</h1>
+              </div>
+              <div>
+                  <input type="number" name="kg" value="{{ $record->kg }}">
+              </div>
+              <h4>reps</h4>
+              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="reps">
+                <option selected value="{{ $record->reps }}">{{ $record->reps }}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+              </select>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
           @endforeach
         </div>
     </div>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        こんにちは
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalstore">
+        post
       </button>
       
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModalstore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -53,6 +130,7 @@
             {{-- 入力画面 --}}
             <form action="{{ route('home.store') }}" method="POST">
                 @csrf
+                @method('put')
               <div>
                 <input type="text" name="title">
               </div>
@@ -104,152 +182,12 @@
         </div>
       </div>
 
-      {{-- ２個目 --}}
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        こんにちは
-      </button>
+      {{-- edit画面 --}}
+      {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        edit
+      </button> --}}
       
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">種目</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            {{-- 入力画面 --}}
-            <form action="">
-                @csrf
-                <div>
-                    <input type="text">
-                </div>
-              </form>
-
-              <select class="" aria-label="">
-                <option selected>set</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">kg</h1>
-              </div>
-
-              <form action="">
-                @csrf
-                <div>
-                    <input type="text">
-                </div>
-              </form>
-             
-              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>reps</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-              </select>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {{-- ３個目 --}}
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        こんにちは
-      </button>
       
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">種目</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            {{-- 入力画面 --}}
-            <form action="">
-                @csrf
-                <div>
-                    <input type="text">
-                </div>
-              </form>
 
-              <select class="" aria-label="">
-                <option selected>set</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">kg</h1>
-              </div>
-
-              <form action="">
-                @csrf
-                <div>
-                    <input type="text">
-                </div>
-              </form>
-             
-              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>reps</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-              </select>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    
+      
 @endsection
