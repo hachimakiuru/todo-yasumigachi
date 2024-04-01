@@ -4,16 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;// SoftDeletesトレイトをインポート
 
 class Post extends Model
 {
     use HasFactory;
+    use SoftDeletes; // SoftDeletesトレイトを使用
 
     protected $fillable = [
         'title',
         'body', // 'content' から 'body' に変更
         'image',
     ];
+
+    protected $dates = ['deleted_at']; // ソフトデリートするカラム
 
     public function comments()
     {
