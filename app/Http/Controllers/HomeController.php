@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Records;
 use Illuminate\Http\Request;
 
-
 class HomeController extends Controller
 {
     /**
@@ -18,11 +17,11 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    
-    //   Show the application dashboard.
-     
-    //   @return \Illuminate\Contracts\Support\Renderable
-     
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
         $records = Records::all();
@@ -41,24 +40,6 @@ class HomeController extends Controller
         return redirect()->route('home');
 
     }
-
-    
-    function edit(Request $request, $id)
-    {
-        // dd("test");
-        $record = Records::find($id);
-
-        $record->title = $request->input('title');
-        $record->reps = $request->input('reps');
-        $record->kg = $request->input('kg');
-        $record->set = $request->input('set');
-        $record->update();
-
-        // return view('home', compact('records'));
-        return back();
-    }
-
-    
 }
 
 
