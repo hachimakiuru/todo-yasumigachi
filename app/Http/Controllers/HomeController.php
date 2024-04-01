@@ -40,6 +40,19 @@ class HomeController extends Controller
         return redirect()->route('home');
 
     }
+
+    function edit(Request $request, $id)
+    {
+        $record = Records::find($id);
+
+        $record->title = $request->input('title');
+        $record->reps = $request->input('reps');
+        $record->kg = $request->input('kg');
+        $record->set = $request->input('set');
+        $record->update();
+
+        return back();
+    }
 }
 
 
