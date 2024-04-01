@@ -7,7 +7,7 @@
               <div class="card mt-3">
 
                    @if($post->image)
-                   <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image">
+                   <img src="{{ asset('storage/images/' . $post->image) }}" alt="Post Image">
                      @else
                          <p>No image available</p>
                      @endif

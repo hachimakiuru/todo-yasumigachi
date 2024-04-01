@@ -51,6 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'avatar' => ['image'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -63,9 +64,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        if (isset($data['avatar'])) {
+            $avatarName = $data['avatar']->getClientOriginalName();
+            $data['avatar']->move(public_path('storage/images'), $avatarName);
+            // $image->move(public_path('storage/images'), $imageName);
+        } else {
+            $avatarName = null; // アバターがアップロードされていない場合はnullをセット
+        }
+    
+        // ユーザーの作成
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'avatar' => $avatarName,
             'password' => Hash::make($data['password']),
         ]);
     }
