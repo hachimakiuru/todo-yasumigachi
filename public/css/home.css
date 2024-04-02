@@ -1,15 +1,21 @@
-.container{
-    max-width: 100%;
-    height: 100%;
-    background-color: blueviolet;
+body{
+background-color: red;
+}
 
+
+.post-container{
+    background-color: white;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    border-radius: 10px; /* 角を丸くする */
 }
 
 .calender1{
-    background-color: yellow;
     display: flex; /*横並び*/
     justify-content: center;
-    margin-bottom: 20px;
+    margin-top: 80px;
 }
 
 .calendar2{
@@ -17,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    border-radius: 10px; /* 角を丸くする */
 }
 
 .calendar2 > * {
@@ -25,7 +31,8 @@
 }
 
 
-.calendar2>h4{
-    background-color: yellow;    
+.calendar2>span{
+    background-color: rgb(119, 119, 99);    
+    border-radius: 10px; /* 角を丸くする */
 }
 
