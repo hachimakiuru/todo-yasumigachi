@@ -19,17 +19,16 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-  <header>
+  {{-- <header>
 
  
     </div>
     <div class="header-left">
         </div>
-        <div class="header-right">
         <div class="dropdown nav">
-          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          {{ Auth::user()->name }}
-          </a>
+          <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle mb-3" width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">
+
+
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
@@ -40,17 +39,20 @@
                                                      document.getElementById('logout-form').submit();">{{ __('Register') }}</a></li>
           </ul>
 
-          <img src="{{asset('storage/images/'.Auth::User()->avatar)}}" class="d-block rounded-circle mb-3">
+          <img src="{{asset('storage/images/'.Auth::User()->avatar)}}"  class="d-block rounded-circle mb-3" width="30" height="30" margin-bottom="30px" >
+          
+        </div>
+          
           
         </div>
         </div>
-  </header>
+  </header> --}}
   @yield('content')
   <footer>
     <div class="footer-container">
-      <a href="{{ route('posts.index') }}"><i class="ri-add-box-line"></i></a>
-     <a href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
-      <a href=""><i class="ri-play-list-add-line"></i></a>
+      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i></a>
+     <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
+     <a href="{{ route('welcome') }}"><img src="{{asset('storage/images/'.Auth::User()->avatar)}}" id="sbj" width="30" height="30" ></a>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>

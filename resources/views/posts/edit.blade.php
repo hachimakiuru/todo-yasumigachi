@@ -4,7 +4,7 @@
 
   <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8" id="edit-container">
             <form action="{{ route('posts.update',$post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
@@ -20,7 +20,7 @@
                     <label for="image">Image:</label><br>
                     <input type="file" id="image" name="image"  value="{{ $post->image }}">
                 </div>
-                <button type="submit" class="btn btn-primary">更新する</button>
+                <button type="submit" class="btn btn-primary" id="color" >更新する</button>
             </form>
         </div>
     </div>
