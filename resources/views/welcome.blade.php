@@ -29,7 +29,6 @@
              <div class="btn-box-aa">         
                 <a href="{{ route('login') }}" class="btn">Log in</a>
                 <a href="{{ route('register') }}" class="btn">Register</a>  
-                <a href="{{ route('logout') }}" class="btn">Logout</a>
             </div>
             <form action="">
 

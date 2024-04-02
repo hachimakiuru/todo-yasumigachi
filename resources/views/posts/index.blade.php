@@ -37,6 +37,7 @@
                    {{ $post->created_at }}
                <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary" id="color">詳しく読む</a>
             </div> 
+            <hr>
             @endforeach
         </div>
         </div>
