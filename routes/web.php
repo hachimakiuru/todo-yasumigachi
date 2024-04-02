@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NiceController as MyNiceController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +28,25 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+
+//resource コントローラー
+Route::resource('/post' , 'PostController' );
+
+// いいねをつける
+Route::get('/nice/{post}', ['as' => 'nice', 'uses' => 'App\Http\Controllers\NiceController@nice']);
+
+// いいねを表示するページ
+Route::get('/nice-show/{post}', ['as' => 'nice.show', 'uses' => 'App\Http\Controllers\NiceController@index']);
+
+//いいねを外す
+Route::get('/unnice/{post}', ['as' => 'unnice', 'uses' => 'App\Http\Controllers\NiceController@unnice']);
+
+
+
+
+
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
