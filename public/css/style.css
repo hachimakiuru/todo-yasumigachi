@@ -10,16 +10,13 @@ header{
     align-items: center;
     background-color: #A39292;
     padding: 20px 40px;
-    /* position: fixed;
+    height: 64px;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0; */
+    right: 0;
     width: 100%;
     z-index: 1000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .logo{
@@ -44,16 +41,12 @@ footer{
     font-size: 20px;
     padding: 20px 40px;
     height: 64px;
-    /* position: fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
-    right: 0; */
+    right: 0;
     width: 100%;
     z-index: 1000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-   border-bottom-left-radius: 10px;
-   border-bottom-right-radius: 10px;
 }
 
 .nav-color{
@@ -94,9 +87,44 @@ a{
   font-size: xx-large;
 }
 
+#sbj{
+  margin-bottom: 30px;
+  border-radius: 50% !important;
+}
+
+.card-body{
+  display: column;
+  justify-content: center;
+  align-items:baseline
+}
+
 /* index.blade.php */
 .card-header{
   display: flex;
   justify-content: space-between;
 }
+
+#card-title{
+  margin: 0px;
+}
+.col-md-8{
+  padding-bottom: 55px;
+}
 /* index.blade.php */
+
+
+#show-container{
+  padding-bottom: 75px;
+}
+
+
+
+
+#color{
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
+  transition: none;
+}
+

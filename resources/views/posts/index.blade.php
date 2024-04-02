@@ -17,21 +17,25 @@
              </div>
 
             @foreach ($posts as $post)
+          
+              
+            
             <div class="card-body">
+              <div>
+                <h5 class="card-title" id="card-title" > {{ $post->title }}</h5>
+                <p class="card-text">{{ $post->user->name }}</p> 
+              </div>
+              
               @if($post->image) 
 
-                  <img src="{{ asset('storage/images/' . $post->image) }}" alt="Post Image">
+                  <img src="{{ asset('storage/images/' . $post->image) }}" alt="Post Image"width="330px" height="330px" >
                      @else
                          <p>No image available</p>
                      @endif
 
-                <h5 class="card-title">タイトル : {{ $post->title }}</h5>
-                <p class="card-text">内容 : {{ $post->body }}</p>
-                <p class="card-text">投稿者：{{ $post->user->name }}</p> 
-                <div class="card-footer text-muted">
-                  {{-- 投稿日時 : {{ $post->created_at }} --}}
-              </div>
-               <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細へ</a>
+                <p class="card-text">{{ $post->body }}</p>
+                   {{ $post->created_at }}
+               <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary" id="color">詳しく読む</a>
             </div> 
             @endforeach
         </div>

@@ -19,7 +19,7 @@
                     <label for="image">Image:</label><br>
                     <input type="file" id="image" name="image" >
                 </div>
-                <button type="submit" class="btn btn-primary">作成</button>
+                <button type="submit" class="btn btn-primary"id="color" >作成</button>
             </form>
         </div>
     </div>
