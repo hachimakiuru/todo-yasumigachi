@@ -2,7 +2,53 @@
 
 @section('content')
 
+<style>
+body{
+  background-color: blue
+}
+  
+  .container{
+    max-width: 100%;
+    height: 100%;
+    
 
+}
+
+.calender1{
+    display: flex; /*横並び*/
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.calendar2{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 210px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+
+.calendar2 > * {
+    margin: 5px 0;
+}
+
+
+.set-container{
+  background-color: yellow
+}
+
+.set-container2{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+</style>
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
 
@@ -12,51 +58,49 @@
         <h4>日付</h4>
     </div>
 
-        <div class="calendar2">
-            <h4>{{ 'トレーニング日' }}</h4>
+    <div class="calendar2">
             <span>
               {{ \Carbon\Carbon::now()->setTimezone('Asia/Tokyo')->format('Y年m月d日') }}
 
             </span>
         </div>
-    
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"/></svg>
-       
-      @foreach ($records as $record)
-          
-     
+
+           {{-- post --}}
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"/></svg>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalstore">
+                post
+      </button>
+
          <div class="set-container">
-          
-          <h4>種目:{{ $record->title }}</h4>
-          <ul>
-              <li>set1: {{ $record->set }}</li>
-              <li>kg: {{ $record->kg }}</li>
-              <li>reps: {{ $record->reps }}</li>
-          </ul>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $record->id }}">
-            edit
-          </button>
+            <div class="set-container2">
+              @foreach ($records as $record)
+              <h4>種目:{{ $record->title }}</h4>
+                <ul>
+                    <li>set1: {{ $record->set }}</li>
+                    <li>kg: {{ $record->kg }}</li>
+                    <li>reps: {{ $record->reps }}</li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $record->id }}">
+                  edit
+                </button>
+            </div>
+            
+            
 
           <!-- Modal -->
-      <div class="modal fade" id="exampleModal{{ $record->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">種目edit</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+            <div class="modal fade" id="exampleModal{{ $record->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                  <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">種目edit</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
             
             {{-- 入力画面 --}}
             <form action="{{ route('home.edit', $record->id) }}" method="POST">
                 @csrf
                 @method('put')
-                
-                {{-- <input type="text" name="title" value="{{ $record->title }}">
-                <input type="number" name="set" value="{{ $record->set }}">
-                <input type="number" name="kg" value="{{ $record->kg }}">
-                <select name="reps"> --}}
-                    <!-- オプションの設定と選択 -->
-                {{-- </select> --}}
+
 
               <div>
                 <input type="text" name="title" value="{{ $record->title }}">
@@ -112,11 +156,10 @@
       </div>
           @endforeach
         </div>
+        
     </div>
 
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalstore">
-        post
-      </button>
+
       
       <!-- Modal -->
       <div class="modal fade" id="exampleModalstore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -172,6 +215,8 @@
                 <option value="14">14</option>
                 <option value="15">15</option>
               </select>
+
+              
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

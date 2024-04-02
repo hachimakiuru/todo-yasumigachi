@@ -1,3 +1,109 @@
+
+
+<style>
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #A39292;
+    padding: 20px 40px;
+    position: fixed;
+    /* top: 0;
+    left: 0;
+    right: 0; */
+    width: 100%;
+    z-index: 1000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.logo{
+    height: 36px;
+}
+
+.nav{
+    display: flex;
+}
+
+.nav > li > a {
+    color: #333;
+    font-size: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+footer{
+    background-color: #A39292;
+    color: #333;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 40px;
+    height: 64px;
+    /* position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    width: 100%;
+    z-index: 1000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+
+.nav-color{
+  background-color:rgb(62,45,34);
+}
+
+.btn-primary{
+  background-color:rgb(62,45,34);
+  border-color:rgb(62,45,34);
+}
+
+.btn-danger{
+  background-color: rgb(106,64,33);
+  border-color: rgb(106,64,33);
+}
+
+
+
+.footer-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a{
+  color: black;
+}
+
+.ri-add-box-line {
+  font-size: xx-large;
+}
+
+.ri-file-list-line{
+  font-size: xx-large;
+}
+
+ .ri-play-list-add-line{
+  font-size: xx-large;
+}
+
+/* index.blade.php */
+.card-header{
+  display: flex;
+  justify-content: space-between;
+}
+/* index.blade.php */
+
+</style>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +125,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-  <header>
+  {{-- <header>
 
  
     </div>
@@ -44,16 +150,18 @@
           
         </div>
         </div>
-  </header>
+  </header> --}}
   @yield('content')
-  <footer>
-    <div class="footer-container">
-      <a href="{{ route('posts.index') }}"><i class="ri-add-box-line"></i></a>
-     <a href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
-      <a href=""><i class="ri-play-list-add-line"></i></a>
-    </div>
-  </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
+<footer>
+  <div class="footer-container">
+    <a href="{{ route('posts.index') }}"><i class="ri-add-box-line"></i></a>
+   <a href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
+    <a href=""><i class="ri-play-list-add-line"></i></a>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </html>
