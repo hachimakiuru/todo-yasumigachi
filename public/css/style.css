@@ -90,6 +90,7 @@ a{
 #sbj{
   margin-bottom: 30px;
   border-radius: 50% !important;
+  
 }
 
 .card-body{
@@ -109,6 +110,20 @@ a{
 }
 .col-md-8{
   padding-bottom: 55px;
+}
+
+.large-box{
+  display: flex;
+  justify-content: left;
+}
+
+.large-box1{
+  display: flex;
+  justify-content: left;
+}
+
+.card-text{
+  left: 0%;
 }
 /* index.blade.php */
 
