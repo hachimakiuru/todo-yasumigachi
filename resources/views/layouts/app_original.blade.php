@@ -17,48 +17,29 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <script src="{{ asset('js/app_ori.js') }}"></script>
 </head>
-<body>
-  {{-- <header>
-    <div class="header-left">
-        <div class="dropdown nav">
-          <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle mb-3" width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">
+ 
+{{-- headerは使わない継承機能 --}}
 
-
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-            <li><a class="dropdown-item" href="{{ route('register') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">{{ __('Register') }}</a></li>
-          </ul> 
-        </div>
-        </div>
-        </div>
-  </header> --}}
   @yield('content')
   <footer>
     <div class="footer-container">
-      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i></a>
-      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
-     {{-- <a href="{{ route('welcome') }}"><img src="{{asset('storage/images/'.Auth::User()->avatar)}}" id="sbj" width="30" height="30" ></a>   --}}
+
+      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i><span class="haru" >  　投　稿　  </span></a>
+      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i><span class="haru" >To 　Do</span></a>
+
        <div class="dropdown nav">
-        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-      <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle mb-3" width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">  
-      </a>
-         
-         {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li> --}}
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-            
+            <a class="dropdown-item" href="#" onclick="confirmLogout(event)">
+                <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle"   width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">  
+                <span class="logout" >Signout</span>
+           </a>
+        </div>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" >
+          @csrf
         </form>
-      {{-- </ul>  --}}
-    </div>
+
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>

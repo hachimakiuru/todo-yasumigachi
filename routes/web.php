@@ -57,6 +57,8 @@ Route::put('/home/store', [App\Http\Controllers\HomeController::class, 'store'])
 
 Route::put('/home/{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('home.edit');
 
+Route::delete('/destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('home.destroy');
+
 // Route::get('/create', function () {
 //     return view('posts.create');
 // });
