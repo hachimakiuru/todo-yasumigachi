@@ -1,38 +1,52 @@
 body{
-background-color: red;
-}
-
-
-.post-container{
-    background-color: white;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    overflow-y: auto;
-    border-radius: 10px; /* 角を丸くする */
-}
-
-.calender1{
-    display: flex; /*横並び*/
-    justify-content: center;
-    margin-top: 80px;
-}
-
-.calendar2{
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px; /* 角を丸くする */
-}
-
-.calendar2 > * {
-    margin: 5px 0;
-}
-
-
-.calendar2>span{
-    background-color: rgb(119, 119, 99);    
-    border-radius: 10px; /* 角を丸くする */
-}
-
+    background-color: rgb(201, 201, 201);
+    }
+    
+    
+    .post-container{
+        background-color: white;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        overflow-y: auto;
+        border-radius: 10px; /* 角を丸くする */
+    }
+    
+    .calender1{
+        display: flex; /*横並び*/
+        justify-content: center;
+        margin-top: 80px;
+    }
+    
+    .calendar2{
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px; /* 角を丸くする */
+    }
+    
+    .calendar2 > * {
+        margin: 5px 0;
+    }
+    
+    
+    .calendar2>span{
+        background-color: rgb(119, 119, 99);    
+        border-radius: 10px; /* 角を丸くする */
+    }
+    
+    .set-container>ul{
+        display: flex;
+        gap: 40px;
+    }
+    
+    .edit-delete{
+        display: flex;
+        gap: 10px;
+    }
+    
+    .btn-sm{
+        padding: 5px 10px;
+        font-size: 12px;
+    }

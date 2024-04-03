@@ -64,12 +64,27 @@ footer{
 }
 
 
-
-.footer-container{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+/* footer */
+.footer-container {
+   display: flex;
+  justify-content: center; 
+   align-items: center; 
+  height: 100%; 
 }
+
+/* 各アイコンの間隔を均等に設定 */
+.footer-container a {
+  margin: 0 20px;
+}
+
+.footer-container a span{
+  display: block;
+  font-size: 14px; /* 適切な文字サイズを指定 */
+}
+
+
+
+
 
 a{
   color: black;
@@ -88,7 +103,6 @@ a{
 }
 
 #sbj{
-  margin-bottom: 30px;
   border-radius: 50% !important;
   
 }
@@ -143,3 +157,30 @@ a{
   transition: none;
 }
 
+.dropdown-item:hover{
+  background-color: transparent;
+}
+.dropdown-item{
+display: flex;
+flex-direction: column; /* 子要素を縦方向に配置 */
+align-items: center; /* 子要素を中央揃え */
+margin: 0%;
+padding: 0%;
+}
+
+/* .dropdown-item:active{
+  background-color: transparent !important;
+} */
+
+
+
+.logout{
+  position: relative; /* 相対位置指定 */
+        top: 8px; /* 下に 10px 移動 */
+        text-decoration: underline;
+        
+}
+
+.haru{
+  text-decoration: none;
+}

@@ -39,6 +39,13 @@
          edit
        </button>
 
+       <form id="delete-form-{{ $record->id }}" action="{{ route('home.destroy', $record->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm">削除</button>
+      </form>
+    </div>
+
        <!-- Modal -->
    <div class="modal fade" id="exampleModal{{ $record->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog">
@@ -192,5 +199,12 @@
     </body>
       
 
-      
+    <script>
+      function confirmDelete(recordId) {
+          if (confirm('このレコードを削除してもよろしいですか？')) {
+              // レコードの削除を実行する
+              document.getElementById('delete-form-' + recordId).submit();
+          }
+      }
+    </script>
 @endsection

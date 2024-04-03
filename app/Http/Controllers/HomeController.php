@@ -56,6 +56,15 @@ class HomeController extends Controller
 
         return back();
     }
+    
+    public function destroy($id)
+    {
+        $record = Records::findOrFail($id);
+        $record->delete();
+    
+        return back()->with('success', 'レコードが削除されました');
+    }
+
 }
 
 
