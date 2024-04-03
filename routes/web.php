@@ -27,7 +27,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+// Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+// Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 
 //resource コントローラー

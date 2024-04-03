@@ -20,11 +20,7 @@
 </head>
 <body>
   {{-- <header>
-
- 
-    </div>
     <div class="header-left">
-        </div>
         <div class="dropdown nav">
           <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle mb-3" width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">
 
@@ -37,13 +33,8 @@
             </form>
             <li><a class="dropdown-item" href="{{ route('register') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">{{ __('Register') }}</a></li>
-          </ul>
-
-          <img src="{{asset('storage/images/'.Auth::User()->avatar)}}"  class="d-block rounded-circle mb-3" width="30" height="30" margin-bottom="30px" >
-          
+          </ul> 
         </div>
-          
-          
         </div>
         </div>
   </header> --}}
@@ -51,8 +42,24 @@
   <footer>
     <div class="footer-container">
       <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i></a>
-     <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
-     <a href="{{ route('welcome') }}"><img src="{{asset('storage/images/'.Auth::User()->avatar)}}" id="sbj" width="30" height="30" ></a>   </div>
+      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i></a>
+     {{-- <a href="{{ route('welcome') }}"><img src="{{asset('storage/images/'.Auth::User()->avatar)}}" id="sbj" width="30" height="30" ></a>   --}}
+       <div class="dropdown nav">
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+      <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle mb-3" width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">  
+      </a>
+         
+         {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li> --}}
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+            
+        </form>
+      {{-- </ul>  --}}
+    </div>
+    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
