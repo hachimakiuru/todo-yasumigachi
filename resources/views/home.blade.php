@@ -199,8 +199,15 @@
       {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         edit
       </button> --}}
-      <label for="customRange1" class="form-label">今日の達成度</label>
-      <input type="range" class="form-range" id="customRange1">
+      
+      <div class="cyoushi-container">
+
+
+        <h2>今日の調子</h2>
+        <output id="sliderOutput"></output>
+        <label for="customRange2" class="form-label"></label>
+        <input type="range" class="form-range" min="0" max="5" id="customRange2">
+      </div>
 
     </body>
       
@@ -212,5 +219,28 @@
               document.getElementById('delete-form-' + recordId).submit();
           }
       }
+      const slider = document.getElementById('customRange2');
+  const output = document.getElementById('sliderOutput');
+  
+  slider.addEventListener('input', function() {
+    const value = parseFloat(this.value);
+    
+    // スライダーの値に応じて表示を変更
+    if (value <= 1) {
+      output.innerHTML = "😞"; // 絵文字を追加
+    } else if (value <= 2) {
+      output.innerHTML = "😐";
+    } else if (value <= 3) {
+      output.innerHTML = "😊";
+    } else if (value <= 4) {
+      output.innerHTML = "😄";
+    } else {
+      output.innerHTML = "😁";
+    }
+    
+    // スライダーの値に応じて色を変更
+    const hue = (value / 5) * 120; // HSLの色相を計算
+    slider.style.background = `hsl(${hue}, 100%, 50%)`;
+  });
     </script>
 @endsection

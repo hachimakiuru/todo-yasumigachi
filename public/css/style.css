@@ -184,3 +184,20 @@ padding: 0%;
 .haru{
   text-decoration: none;
 }
+
+
+#sliderOutput {
+  font-size: 8em; /* 絵文字のサイズを大きくする */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyoushi-container{
+  background-color: white;
+  border-radius: 10px;
+  display:column;
+  align-items: center;
+  
+}
+
