@@ -1,0 +1,86 @@
+/* Style for card container */
+.card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for card header */
+.card-header {
+    background-color: #f5f6f7;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+}
+
+/* Style for card body */
+.card-body {
+    padding: 20px;
+}
+
+/* Style for card title */
+.card-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Style for card text */
+.card-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Style for card image */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Style for card footer */
+.card-footer {
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Style for buttons */
+.btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.btn-primary {
+    background-color: #3897f0;
+    border-color: #3897f0;
+}
+
+.btn-primary:hover {
+    background-color: #2680c2;
+    border-color: #2680c2;
+}
+
+.btn-secondary {
+    background-color: #ced4da;
+    border-color: #ced4da;
+}
+
+.btn-secondary:hover {
+    background-color: #adb5bd;
+    border-color: #adb5bd;
+}
+
+/* Style for profile images */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.iine{
+    display: flex;
+  }
