@@ -92,3 +92,11 @@ body{
 output{
     font-size: 65px;
 }    
+
+.days-container{
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    overflow-y: auto;
+    border-radius: 10px;
+}

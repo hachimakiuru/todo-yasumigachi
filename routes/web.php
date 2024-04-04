@@ -7,6 +7,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NiceController as MyNiceController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MemosController;
+
 
 
 
@@ -98,3 +100,14 @@ Route::post('/comments',[CommentController::class, 'store'])->name('comments.sto
 
 //Products
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+Route::post('/memos', [App\Http\Controllers\MemosController::class, 'store'])->name('memos.store');
+// Route::get('/memos/sunday', [App\Http\Controllers\MemosController::class, 'sunday'])->name('memos.sunday');
+// Route::get('/memos/monday', [App\Http\Controllers\MemosController::class, 'monday'])->name('memos.monday');
+// Route::get('/memos/tuesday', [App\Http\Controllers\MemosController::class, 'tuesday'])->name('memos.tuesday');
+// Route::get('/memos/wednesday', [App\Http\Controllers\MemosController::class, 'wednesday'])->name('memos.wednesday');
+// Route::get('/memos/thursday', [App\Http\Controllers\MemosController::class, 'thursday'])->name('memos.thursday');
+// Route::get('/memos/friday', [App\Http\Controllers\MemosController::class, 'friday'])->name('memos.friday');
+// Route::get('/memos/saturday', [MemosController::class, 'saturday'])->name('memos.saturday');
+
+

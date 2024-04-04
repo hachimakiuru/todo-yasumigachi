@@ -5,13 +5,243 @@
 
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
-<button type="button" class="btn btn-outline-primary">日</button>
-<button type="button" class="btn btn-outline-secondary">月</button>
-<button type="button" class="btn btn-outline-success">火</button>
-<button type="button" class="btn btn-outline-danger">水</button>
-<button type="button" class="btn btn-outline-warning">木</button>
-<button type="button" class="btn btn-outline-info">金</button>
-<button type="button" class="btn btn-outline-light">土</button>
+
+
+<div class="container">
+  <div class="d-flex justify-content-between">
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" >日</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" >月</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3" >火</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4" >水</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5" >木</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal6" >金</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal7" >土</button>
+  </div>
+</div>
+
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="1" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="2" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="3" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="4" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="5" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="6" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('memos.store') }}" method="POST">
+          @csrf
+          <input type="number" value="7" name="day_id" hidden>
+          <textarea name="content" rows="4" cols="50">{{'' }}</textarea>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</div>
+
+<div class="container days-container">
+  <div class="mt-4">
+    <h2>日曜日のメモ</h2>
+    {{-- <textarea name="memo" rows="4" cols="50">{{'' }}</textarea>
+    <button type="submit" class="btn btn-primary mt-2">保存</button> --}}
+    @foreach($memos as $memo)
+      @if($memo->day_id == 1)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+  </div>
+
+  <div class="mt-4">
+      <h2>月曜日のメモ</h2>
+      {{-- <form method="POST">
+          @csrf
+          
+          <textarea name="memo" rows="4" cols="50">{{'' }}</textarea>
+          <button type="submit" class="btn btn-primary mt-2">保存</button>
+      </form> --}}
+      @foreach($memos as $memo)
+      @if($memo->day_id == 2)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+  </div>
+  <div class="mt-4">
+      <h2>火曜日のメモ</h2>
+      @foreach($memos as $memo)
+      @if($memo->day_id == 3)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+    
+  </div>
+  <div class="mt-4">
+      <h2>水曜日のメモ</h2>
+      @foreach($memos as $memo)
+      @if($memo->day_id == 4)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+  </div>
+  <div class="mt-4">
+      <h2>木曜日のメモ</h2>
+      @foreach($memos as $memo)
+      @if($memo->day_id == 5)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+  </div>
+  <div class="mt-4">
+      <h2>金曜日のメモ</h2>
+      @foreach($memos as $memo)
+      @if($memo->day_id == 6)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+  </div>
+  <div class="mt-4">
+      <h2>土曜日のメモ</h2>
+      @foreach($memos as $memo)
+      @if($memo->day_id == 7)
+        <div>{{ $memo->content }}</div>
+      @endif
+    @endforeach
+  </div>
+  
+</div>
+
 
 
     <div class="container">
@@ -219,7 +449,6 @@
             </div>
         </div>
     </div>
-   
       
 
     <script>
