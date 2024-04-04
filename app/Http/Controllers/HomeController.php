@@ -9,6 +9,7 @@ use Illuminate\Console\Scheduling\Schedule;
 
 
 
+
 class HomeController extends Controller
 {
     /**
@@ -66,9 +67,10 @@ class HomeController extends Controller
         return back()->with('success', 'レコードが削除されました');
     }
 
-
-
+    
 }
+
+
 
 
 

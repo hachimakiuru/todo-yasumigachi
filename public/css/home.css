@@ -53,3 +53,42 @@ body{
         font-size: 12px;
     }
 
+    
+    /* スライダーを中央に配置 */
+    .cyoushi-container {
+        text-align: center;
+        margin-top: 35px;
+        background-color: white;
+        border-radius: 10px;
+        height: 210px;
+    }
+    /* アイコンを大きくして目立たせる */
+    .icon {
+        font-size: 30px;
+        margin: 10px;
+        color: white;
+    }
+    
+    .form-range {
+        /* グラデーションを背景に設定 */
+        background: linear-gradient(to right, #ff9a9e, #fecfef);
+        /* スライダーの高さを指定 */
+        height: 10px;
+        /* 角を丸くする */
+        border-radius: 15px;
+        /* ボックスシャドウを追加して立体感を演出 */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        /* スライダーのマーカーを透明にする */
+        -webkit-appearance: none;
+        appearance: none;
+        /* マーカーのスタイルを指定 */
+        cursor: pointer;
+        outline: none;
+        /* スライダーのレールを透明にする */
+        background-color: #FFFFFF; /* スライダーの中身の色を白色に変更 */
+        height: 25px;
+    }
+
+output{
+    font-size: 65px;
+}    

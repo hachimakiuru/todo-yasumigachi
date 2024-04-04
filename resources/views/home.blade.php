@@ -5,9 +5,15 @@
 
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
-  <body>
-    
-  
+<button type="button" class="btn btn-outline-primary">日</button>
+<button type="button" class="btn btn-outline-secondary">月</button>
+<button type="button" class="btn btn-outline-success">火</button>
+<button type="button" class="btn btn-outline-danger">水</button>
+<button type="button" class="btn btn-outline-warning">木</button>
+<button type="button" class="btn btn-outline-info">金</button>
+<button type="button" class="btn btn-outline-light">土</button>
+
+
     <div class="container">
     <div class="calender1">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"/></svg>
@@ -200,16 +206,20 @@
         edit
       </button> --}}
       
-      <div class="cyoushi-container">
-
-
-        <h2>今日の調子</h2>
-        <output id="sliderOutput"></output>
-        <label for="customRange2" class="form-label"></label>
-        <input type="range" class="form-range" min="0" max="5" id="customRange2">
-      </div>
-
-    </body>
+      <div class="container">
+        <div class="cyoushi-container">
+            <h2>今日の調子</h2>
+            <!-- アイコン付きのスライダー -->
+            <output id="sliderOutput"></output>
+            <br>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="icon fas fa-tired"></i>
+                <input type="range" class="form-range" min="0" max="5" id="customRange2">
+                <i class="icon fas fa-smile"></i>
+            </div>
+        </div>
+    </div>
+   
       
 
     <script>

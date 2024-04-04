@@ -188,8 +188,8 @@ padding: 0%;
 }
 
 
-#sliderOutput {
-  font-size: 8em; /* 絵文字のサイズを大きくする */
+/* #sliderOutput {
+  font-size: 8em; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,7 +201,7 @@ padding: 0%;
   display:column;
   align-items: center;
   
-}
+} */
 
 .iine{
   display: flex;

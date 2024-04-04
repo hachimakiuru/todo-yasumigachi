@@ -60,6 +60,8 @@ Route::put('/home/{id}/edit', [App\Http\Controllers\HomeController::class, 'edit
 
 Route::delete('/destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('home.destroy');
 
+
+
 // routes/web.php
 
 Route::get('/clear-entries', [HomeController::class, 'clearEntries']);
