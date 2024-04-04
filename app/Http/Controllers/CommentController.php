@@ -26,5 +26,34 @@ class CommentController extends Controller
 
         return redirect()->route('posts.show' , $post->id);
         }
+
+        public function edit(Comment $comment)
+{
+    return view('comments.edit', compact('comment'));
+}
+
+public function update(Request $request, Comment $comment)
+{
+    $request->validate([
+        'content' => 'required|string',
+    ]);
+
+    $comment->update([
+        'content' => $request->content,
+    ]);
+
+    return redirect()->route('posts.show', $comment->post_id)->with('success', 'コメントが更新されました。');
+}
     
+
+// CommentController.php
+
+public function destroy(Comment $comment)
+{
+    $postId = $comment->post_id;
+    $comment->delete();
+
+    return redirect()->route('posts.show', $postId)->with('success', 'コメントが削除されました。');
+}
+
 }

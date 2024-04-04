@@ -15,11 +15,13 @@
   <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
 
+
+
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <script src="{{ asset('js/app_ori.js') }}"></script>
 
-  
 </head>
  
 {{-- headerは使わない継承機能 --}}
@@ -32,7 +34,7 @@
       <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i><span class="haru" >To 　Do</span></a>
 
        <div class="dropdown nav">
-            <a class="dropdown-item" href="#" onclick="confirmLogout(event)">
+            <a class="dropdown-item" href="" onclick="confirmLogout(event)">
                 <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle"   width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">  
                 <span class="logout" >Signout</span>
            </a>
