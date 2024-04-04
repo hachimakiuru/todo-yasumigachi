@@ -20,7 +20,7 @@
             <div class="card-body">
               <div class="large-box">
               <div>
-                <img src="{{asset('storage/images/'.Auth::User()->avatar)}}" width="30" height="30" style="border: 0.2px solid black; border-radius: 50px;" >
+                <img src="{{asset('storage/images/'.$post->user->avatar)}}" width="30" height="30" style="border: 0.2px solid black; border-radius: 50px;" >
               </div>
 
 
@@ -41,7 +41,7 @@
 
                     {{-- 以下いいねの記述 --}}
                     @if($post->nices()->where('user_id', Auth::user()->id)->count() ==1 )
-                      <a href="{{ route('unnice', $post) }}" class="btn btn-succes btn-sm" >
+                      <a href="{{ route('unnice', $post) }}" class="btn btn-success btn-sm disabled" disabled >
                         いいねを消す
                         <span class="badge">{{ $post->nices->count() }}</span>
                       </a>
