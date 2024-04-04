@@ -173,10 +173,10 @@
 </div>
 
 <div class="container days-container">
+  
   <div class="mt-4">
     <h2>日曜日のメモ</h2>
-    {{-- <textarea name="memo" rows="4" cols="50">{{'' }}</textarea>
-    <button type="submit" class="btn btn-primary mt-2">保存</button> --}}
+   
     @foreach($memos as $memo)
       @if($memo->day_id == 1)
         <div>{{ $memo->content }}</div>
@@ -186,12 +186,7 @@
 
   <div class="mt-4">
       <h2>月曜日のメモ</h2>
-      {{-- <form method="POST">
-          @csrf
-          
-          <textarea name="memo" rows="4" cols="50">{{'' }}</textarea>
-          <button type="submit" class="btn btn-primary mt-2">保存</button>
-      </form> --}}
+     
       @foreach($memos as $memo)
       @if($memo->day_id == 2)
         <div>{{ $memo->content }}</div>
