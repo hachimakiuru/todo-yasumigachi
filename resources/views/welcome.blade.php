@@ -22,8 +22,8 @@
         <div class="main-box">
             <h1>welcome</h1>
 
-            {{ date('Y年m月d日') }}
-            {{ now()->format('Y年m月d日') }}
+            {{-- {{ date('Y年m月d日') }}
+            {{ now()->format('Y年m月d日') }} --}}
 
 
              <div class="btn-box-aa">         

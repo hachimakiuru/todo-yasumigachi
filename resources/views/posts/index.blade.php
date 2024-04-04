@@ -23,7 +23,6 @@
                 <img src="{{asset('storage/images/'.$post->user->avatar)}}" width="30" height="30" style="border: 0.2px solid black; border-radius: 50px;" >
               </div>
 
-
               <div >
                <div><h5 class="card-title" id="card-title" > {{ $post->title }}</h5></div>
                 <div><p class="card-text">{{ $post->user->name }}</p> </div>
@@ -39,24 +38,36 @@
                          <p>No image available</p>
                      @endif
 
+                     <div class="iine">
                     {{-- 以下いいねの記述 --}}
                     @if($post->nices()->where('user_id', Auth::user()->id)->count() ==1 )
-                      <a href="{{ route('unnice', $post) }}" class="btn btn-success btn-sm disabled" disabled >
-                        いいねを消す
+                      <a href="{{ route('unnice', $post) }}" class="btn btn-success btn-sm"  >
+                        <i class="fas fa-heart"></i> 
                         <span class="badge">{{ $post->nices->count() }}</span>
                       </a>
                     @else
                      <a href="{{ route('nice' , $post) }}" class="btn btn-secondary btn-sm" >
-                      いいねをつける
+                      <i class="fas fa-heart"></i> 
                       <span class="badge">{{ $post->nices->count() }}</span>
                     </a>
                     @endif
-
                     {{-- いいねの記述終 --}}
 
-                <p class="card-text">{{ $post->body }}</p>
-                   {{ $post->created_at }}
-               <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary" id="color">詳しく読む</a>
+
+
+
+
+            </div>
+
+
+              
+
+
+                <p class="card-text" style="text-align: left;">{{ $post->body }}</p>
+                <div style="text-align: right;">
+                  <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary" id="color">詳しく読む</a>
+              </div>
+              
             </div> 
             <hr>
             @endforeach
@@ -64,6 +75,6 @@
         </div>
     </div>
   </div>
-
+ 
   @endsection
   

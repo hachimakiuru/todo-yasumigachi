@@ -121,6 +121,7 @@ a{
 
 #card-title{
   margin: 0px;
+  font-size: 15px;
 }
 .col-md-8{
   padding-bottom: 55px;
@@ -137,6 +138,7 @@ a{
 }
 
 .card-text{
+  font-size: x-small;
   left: 0%;
 }
 /* index.blade.php */
@@ -199,5 +201,9 @@ padding: 0%;
   display:column;
   align-items: center;
   
+}
+
+.iine{
+  display: flex;
 }
 

@@ -93,6 +93,15 @@ Route::get('/comments/create/{post_id}',[CommentController::class, 'create'])->n
 
 Route::post('/comments',[CommentController::class, 'store'])->name('comments.store');
 
+Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
+
+Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
+
+// routes/web.php
+
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
+
 
 //Products
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
