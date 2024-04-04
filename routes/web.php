@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NiceController as MyNiceController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -58,6 +59,10 @@ Route::put('/home/store', [App\Http\Controllers\HomeController::class, 'store'])
 Route::put('/home/{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('home.edit');
 
 Route::delete('/destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('home.destroy');
+
+// routes/web.php
+
+Route::get('/clear-entries', [HomeController::class, 'clearEntries']);
 
 // Route::get('/create', function () {
 //     return view('posts.create');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Records;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 
 
@@ -65,6 +66,22 @@ class HomeController extends Controller
         return back()->with('success', 'レコードが削除されました');
     }
 
+    class HomeController extends Controller
+{
+    public function clearEntries()
+    {
+        // 昨日の日付を取得
+        $yesterday = Carbon::yesterday();
+
+        // 昨日の日付以前のエントリを削除
+        YourModel::whereDate('created_at', '<', $yesterday)->delete();
+
+        return "エントリが削除されました";
+    }
 }
+
+}
+
+
 
 
