@@ -31,19 +31,23 @@
        
        <h4>種目:{{ $record->title }}</h4>
        <ul>
-           <li>set1: {{ $record->set }}</li>
-           <li>kg: {{ $record->kg }}</li>
-           <li>reps: {{ $record->reps }}</li>
+           <li>{{ $record->set }}set</li>
+           <li> {{ $record->kg }}kg</li>
+           <li>{{ $record->reps }}reps</li>
        </ul>
-       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $record->id }}">
-         edit
-       </button>
 
-       <form id="delete-form-{{ $record->id }}" action="{{ route('home.destroy', $record->id) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger btn-sm">削除</button>
-      </form>
+     <div class="edit-delete">
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $record->id }}">
+              edit
+            </button>
+
+            <form id="delete-form-{{ $record->id }}" action="{{ route('home.destroy', $record->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm">削除</button>
+          </form>
+     </div> 
+
     </div>
 
        <!-- Modal -->
@@ -195,7 +199,9 @@
       {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         edit
       </button> --}}
-    
+      <label for="customRange1" class="form-label">今日の達成度</label>
+      <input type="range" class="form-range" id="customRange1">
+
     </body>
       
 
