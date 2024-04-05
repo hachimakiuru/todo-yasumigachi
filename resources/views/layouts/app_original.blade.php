@@ -33,8 +33,8 @@
   <footer>
     <div class="footer-container">
 
-      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i><span class="haru" >  　投　稿　  </span></a>
-      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i><span class="haru" >To 　Do</span></a>
+      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i><span class="haru" >  投稿  </span></a>
+      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i><span class="haru" >To Do</span></a>
 
        <div class="dropdown nav">
             <a class="dropdown-item" href="" onclick="confirmLogout(event)">

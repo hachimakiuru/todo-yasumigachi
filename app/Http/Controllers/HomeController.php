@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Memo;
 use App\Models\Records;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -30,7 +31,8 @@ class HomeController extends Controller
     public function index()
     {
         $records = Records::all();
-        return view('home', compact('records'));
+        $memos = Memo::all();
+        return view('home', compact('records' , 'memos'));
     }
     
     public function store(Request $request)
