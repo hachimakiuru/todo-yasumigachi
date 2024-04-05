@@ -189,7 +189,7 @@ padding: 0%;
 
 
 #sliderOutput {
-  font-size: 8em; /* 絵文字のサイズを大きくする */
+  font-size: 50px; /* 絵文字のサイズを大きくする */
   display: flex;
   justify-content: center;
   align-items: center;
