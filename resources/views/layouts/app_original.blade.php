@@ -33,13 +33,13 @@
   <footer>
     <div class="footer-container">
 
-      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i><span class="haru" >  投稿  </span></a>
-      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i><span class="haru" >To Do</span></a>
+      <a id="sbj" href="{{ route('posts.index') }}"><i  class="ri-add-box-line"></i><span>Add Content</span></a>
+      <a id="sbj" href="{{ route('home') }}"><i class="ri-file-list-line"></i><span>Add Content</span></a>
 
        <div class="dropdown nav">
             <a class="dropdown-item" href="" onclick="confirmLogout(event)">
                 <img src="{{ asset('storage/images/' . Auth::user()->avatar) }}" class="d-block rounded-circle"   width="30" height="30" id="dropdownMenuLink" onclick="toggleDropdown()" style="cursor: pointer;">  
-                <span class="logout" >Signout</span>
+                <span class="gbm">Add Content</span>
            </a>
         </div>
 
