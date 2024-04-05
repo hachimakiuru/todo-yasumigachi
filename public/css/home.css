@@ -1,11 +1,13 @@
 body{
     background-color: rgb(201, 201, 201);
+    overflow-y: auto;
+    height: 870px;
     }
     
     
     .post-container{
         background-color: white;
-        height: 300px;
+        height: 200px;
         /* display: flex;
         justify-content: center; */
         border-radius: 10px; /* 角を丸くする */
@@ -15,7 +17,7 @@ body{
     .calender1{
         display: flex; /*横並び*/
         justify-content: center;
-        margin-top: 80px;
+        margin-top: 60px;
     }
     
     .calendar2{
@@ -57,14 +59,14 @@ body{
     /* スライダーを中央に配置 */
     .cyoushi-container {
         text-align: center;
-        margin-top: 35px;
+        margin-top: 17px;
         background-color: white;
         border-radius: 10px;
-        height: 210px;
+        height: 170px;
     }
     /* アイコンを大きくして目立たせる */
     .icon {
-        font-size: 30px;
+        font-size: 10px;
         margin: 10px;
         color: white;
     }
@@ -96,7 +98,13 @@ output{
 .days-container{
     background-color: white;
     display: flex;
-    gap: 10px;
-    overflow-y: auto;
+    justify-content: center;
+    gap: 30px;
+    overflow-y: scroll;
     border-radius: 10px;
+}
+
+h4{
+
+    font-size: 15px;
 }

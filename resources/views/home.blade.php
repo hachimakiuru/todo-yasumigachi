@@ -175,7 +175,7 @@
 <div class="container days-container">
   
   <div class="mt-4">
-    <h2>日曜日のメモ</h2>
+    <h4>日</h4>
    
     @foreach($memos as $memo)
       @if($memo->day_id == 1)
@@ -185,7 +185,7 @@
   </div>
 
   <div class="mt-4">
-      <h2>月曜日のメモ</h2>
+      <h4>月</h4>
      
       @foreach($memos as $memo)
       @if($memo->day_id == 2)
@@ -194,7 +194,7 @@
     @endforeach
   </div>
   <div class="mt-4">
-      <h2>火曜日のメモ</h2>
+      <h4>火</h4>
       @foreach($memos as $memo)
       @if($memo->day_id == 3)
         <div>{{ $memo->content }}</div>
@@ -203,7 +203,7 @@
     
   </div>
   <div class="mt-4">
-      <h2>水曜日のメモ</h2>
+      <h4>水</h4>
       @foreach($memos as $memo)
       @if($memo->day_id == 4)
         <div>{{ $memo->content }}</div>
@@ -211,7 +211,7 @@
     @endforeach
   </div>
   <div class="mt-4">
-      <h2>木曜日のメモ</h2>
+      <h4>木</h4>
       @foreach($memos as $memo)
       @if($memo->day_id == 5)
         <div>{{ $memo->content }}</div>
@@ -219,7 +219,7 @@
     @endforeach
   </div>
   <div class="mt-4">
-      <h2>金曜日のメモ</h2>
+      <h4>金</h4>
       @foreach($memos as $memo)
       @if($memo->day_id == 6)
         <div>{{ $memo->content }}</div>
@@ -227,7 +227,7 @@
     @endforeach
   </div>
   <div class="mt-4">
-      <h2>土曜日のメモ</h2>
+      <h4>土</h4>
       @foreach($memos as $memo)
       @if($memo->day_id == 7)
         <div>{{ $memo->content }}</div>
